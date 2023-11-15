@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "server": "next start",
+    "server2": "npx serve@latest out",
     "lint": "next lint"
   },
   "dependencies": {
