@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import i18nextConfig from '../../../next-i18next.config'
 import styles from '@/styles/Home.module.css'
 import { getStaticPaths, makeStaticProps } from '@/lib/getStatic'
-import { LanguageSwitchDropdown } from '@/components/LanguageSwitchDropdown'
+import { LanguageSwitchDropdown } from '@/components/languageSwitchDropdown'
 
 export default function Home() {
   const router = useRouter()
