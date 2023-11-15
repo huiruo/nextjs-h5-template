@@ -4,5 +4,7 @@
   "error-without-status": "Auf dem Server ist ein Fehler aufgetreten",
   "h1": "Ein einfaches Beispiel",
   "title": "Hauptseite | next-i18next",
-  "to-second-page": "Zur zweiten Seite"
+  "to-second-page": "Zur zweiten Seite",
+  "change-locale": "Sprache wechseln",
+  "description": "Dies ist eine Nicht-Seitenkomponente, die einen eigenen Namespace erfordert"
 }
