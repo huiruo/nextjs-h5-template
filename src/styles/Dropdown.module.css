@@ -1,0 +1,31 @@
+.dropdown {
+  position: relative;
+  /* top: 3px; */
+}
+
+.dropdownList {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  height: 90px;
+  width: 120px;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #fff;
+  border: 1px solid #EBEBEB;
+  border-top: none;
+  border-radius: 8px;
+}
+
+.option {
+  height: 50%;
+  text-align: center;
+  line-height: 44.5px;
+  vertical-align: middle;
+  background: #FFFFFF;
+}
+
+.option:hover {
+  color: #00D9B2;
+  cursor: pointer;
+}

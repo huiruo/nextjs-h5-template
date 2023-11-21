@@ -1,10 +1,17 @@
 {
+  "about-us": "معلومات",
+  "locale-lan": "عربي",
+  "MicU": "MicU",
+  "new": "جدد",
+  "life": "أصدقاء",
+  "new2": "جديدة،",
+  "friends": "حياة",
+  "introduce":"إنها دردشة صوتية جماعية شعبية متعددة اللغات في الوقت الفعلي ومجتمع ترفيهي عبر الإنترنت.",
   "back-to-home": "Torna alla pagina principale",
   "error-with-status": "Sul server si verificato un errore ({{statusCode}})",
   "error-without-status": "Sul server si verificato un errore",
   "h1": "Un semplice esempio",
   "title": "Pagina principale | next-i18next",
   "to-second-page": "Vai alla seconda pagina",
-  "change-locale": "Cambia lingua",
   "description": "Questo è un componente non di pagina che richiede il proprio namespace"
 }
