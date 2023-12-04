@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
-import mainRightIcon from '@/assets/mainRight.png'
 import styles from '@/styles/MainContent.module.scss'
 
 export const MainContent = () => {
@@ -21,8 +20,8 @@ export const MainContent = () => {
         {t('introduce')}
       </div>
     </div>
+
     <div className={styles.mainRight}>
-      <Image src={mainRightIcon} alt='main' />
     </div>
   </div>
 }
