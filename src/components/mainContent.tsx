@@ -1,27 +1,18 @@
 import { useTranslation } from 'react-i18next'
-import Image from 'next/image'
-import styles from '@/styles/MainContent.module.scss'
 
-export const MainContent = () => {
+interface MainContentProps {
+  currentLocale: string
+}
+
+export const MainContent = (props: MainContentProps) => {
   const { t } = useTranslation('common')
 
   return <div className="flex">
-    <div className={styles.mainLeft}>
+    <div style={{ height: '1000px' }}>
       <div>
-        {t('MicU')}
+        currentLocale: {props.currentLocale}
+        <p>{t('description')} test</p>
       </div>
-      <div className={styles.textContainer}>
-        <span className='font font-color'>{t('new')} </span>
-        <span>{t('life')} </span>
-        <span className='font-color'>{t('new2')} </span>
-        <span>{t('friends')}</span>
-      </div>
-      <div className={styles.introduce}>
-        {t('introduce')}
-      </div>
-    </div>
-
-    <div className={styles.mainRight}>
     </div>
   </div>
 }

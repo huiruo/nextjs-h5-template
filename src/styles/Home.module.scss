@@ -1,24 +1,16 @@
-.main {}
+.main {
+  padding: 0px 20px;
+}
 
 .mainContainer {
-  min-width: 1300px;
-  width: 1300px;
-  min-width: 800px;
+  width: 100%;
+  min-width: 100%;
   margin: 0 auto;
 
   .menu {
     display: flex;
     justify-content: space-between;
     padding-top: 30px;
-
-    .leftContainer {
-      padding-top: 10px;
-    }
-
-    .about {
-      height: 100%;
-      margin-right: 62px;
-    }
   }
 }
 

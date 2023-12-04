@@ -6,7 +6,6 @@ import { getStaticPaths, makeStaticProps } from '@/lib/getStatic'
 import { LanguageSwitchDropdown } from '@/components/languageSwitchDropdown'
 import classnames from "classnames";
 import styles from '@/styles/Home.module.scss'
-import Image from 'next/image'
 import { MainContent } from '@/components/mainContent'
 
 export default function Home() {
@@ -19,24 +18,11 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.mainContainer}>
         <div className={styles.menu}>
-          <div className={classnames(styles.leftContainer, 'xy-start')}>
-            <div className={styles.about}>
-              <div>
-                {t('about-us')}
-              </div>
-            </div>
-            <LanguageSwitchDropdown locales={i18nextConfig.i18n.locales} />
-          </div>
+          <div />
+          <LanguageSwitchDropdown locales={i18nextConfig.i18n.locales} />
         </div>
 
-        <MainContent />
-
-        <div style={{ height: '1000px' }}>
-          <div>
-            currentLocale: {currentLocale}
-            <p>{t('description')} test</p>
-          </div>
-        </div>
+        <MainContent currentLocale={currentLocale as string} />
       </div>
     </main>
   )
