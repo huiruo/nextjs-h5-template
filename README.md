@@ -1,4 +1,4 @@
-## weekly-star
+## nextjs-h5-template
 
 ## Getting Started
 Use node version v18.18.1 or above
