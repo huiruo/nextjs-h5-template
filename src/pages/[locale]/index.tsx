@@ -7,12 +7,33 @@ import { LanguageSwitchDropdown } from '@/components/languageSwitchDropdown'
 import classnames from "classnames";
 import styles from '@/styles/Home.module.scss'
 import { MainContent } from '@/components/mainContent'
+import { useEffect } from 'react'
+import { getUserInfo } from '@/lib/native'
+import { getRoomInfo } from '@/services/api'
 
 export default function Home() {
   const router = useRouter()
+  const { rid } = router.query;
   const { t } = useTranslation('common')
   const currentLocale =
     router.query.locale || i18nextConfig.i18n.defaultLocale
+
+  const getRoomInfoUtil = async () => {
+    const res = await getRoomInfo({ rid: rid as any })
+    if (res?.success === true) {
+      console.log('getRoomInfoUtil-res-2=======>:', res.data)
+    } else {
+      console.error('getUser-error:', res)
+    }
+  }
+
+  useEffect(() => {
+    getUserInfo().then((res) => {
+      console.log('%c=index-render', 'color:red', res)
+    })
+
+    getRoomInfoUtil()
+  }, [])
 
   return (
     <main className={styles.main}>

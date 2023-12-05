@@ -2,9 +2,17 @@ import Head from 'next/head'
 import type { AppProps } from 'next/app'
 import { appWithTranslation } from 'next-i18next'
 import { ClientOnly } from '@/lib/clientOnly'
+import { useEffect } from 'react'
+import { setConsole } from '@/lib/utils'
+import { initFetchData } from '@/lib/native'
 import '@/styles/globals.css'
 
 function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    initFetchData()
+    setConsole()
+  }, [])
+
   return <>
     <Head>
       <title>Create Next App</title>

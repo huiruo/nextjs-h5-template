@@ -4,7 +4,6 @@ import { getStaticPaths, makeStaticProps } from '../../lib/getStatic'
 
 export default function About(props: any) {
   const { t } = useTranslation(['common'])
-  console.log('About props:', props)
 
   return (
     <div className={styles.main} >
