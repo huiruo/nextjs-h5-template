@@ -1,3 +1,5 @@
+export const defaultLang = 'ar'
+
 export async function setConsole() {
   if (process.env.NODE_ENV === "development") {
     const { default: VConsole } = await import("vconsole");

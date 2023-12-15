@@ -8,7 +8,6 @@ import classnames from "classnames";
 import styles from '@/styles/Home.module.scss'
 import { MainContent } from '@/components/mainContent'
 import { useEffect } from 'react'
-import { getUserInfo } from '@/lib/native'
 import { getRoomInfo } from '@/services/api'
 
 export default function Home() {
@@ -21,17 +20,13 @@ export default function Home() {
   const getRoomInfoUtil = async () => {
     const res = await getRoomInfo({ rid: rid as any })
     if (res?.success === true) {
-      console.log('getRoomInfoUtil-res-2=======>:', res.data)
+      console.log('RoomInfo==>:', res.data)
     } else {
       console.error('getUser-error:', res)
     }
   }
 
   useEffect(() => {
-    getUserInfo().then((res) => {
-      console.log('%c=index-render', 'color:red', res)
-    })
-
     getRoomInfoUtil()
   }, [])
 

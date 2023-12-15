@@ -54,7 +54,7 @@ export const LanguageSwitchDropdown = (props: LanguageSwitchDropdownProps) => {
   };
 
   useEffect(() => {
-    const handleOutsideClick = (event) => {
+    const handleOutsideClick = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsOpen(false);
       }

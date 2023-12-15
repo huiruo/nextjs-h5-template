@@ -60,23 +60,6 @@ export function getUserInfo(): Promise<UserInfo> {
 
 export const initFetchData = async () => {
   if (typeof window !== "undefined") {
-    getUserInfo().then((res) => {
-      sessionStorage.setItem(
-        "UserInfo",
-        JSON.stringify({
-          uid: res.uid,
-          token: res.token,
-          icon: res.icon,
-          isRooted: res.isRooted,
-          package: res.package,
-          version_code: res.version_code,
-          server_env: res.server_env,
-          lan: res.lan,
-          sex: res.sex,
-        })
-      );
-    });
-
     const commonParams = await callAppFunc("calSign");
     const commonHeader = await callAppFunc("getCommonPara");
     localStorage.setItem("commonParams", JSON.stringify(commonParams));
