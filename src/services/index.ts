@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig, AxiosRequestHeaders } from "axios";
-import { isInApp } from "@/lib/native";
+// import { isInApp } from "@/lib/native";
 
 type BaseURL = {
   development: string;
@@ -13,9 +13,9 @@ const baseURL: BaseURL = {
   production: "https://api.test.vip",
 };
 
-const UserDid = isInApp()
-  ? JSON.parse(localStorage.getItem("commonHeader")!)["User-Did"]
-  : "DuRlx9yTJKsXs0QvZ4UUY1c2wOjEr9dkE07a7dvVqiY1EzONMGU4KIbaqyFJNjINDjRVx2eU31O5AJ1NoowFjWTA";
+// const UserDid = isInApp()
+//   ? JSON.parse(localStorage.getItem("commonHeader")!)["User-Did"]
+//   : "DuRlx9yTJKsXs0QvZ4UUY1c2wOjEr9dkE07a7dvVqiY1EzONMGU4KIbaqyFJNjINDjRVx2eU31O5AJ1NoowFjWTA";
 
 export const instance = axios.create({
   baseURL: baseURL[process.env.NODE_ENV as keyof BaseURL],
@@ -35,7 +35,7 @@ instance.interceptors.request.use(
       "Content-Type": "application/json",
       "user-token": userInfo?.token,
       "User-Language": userInfo?.lan,
-      "User-Did": UserDid,
+      // "User-Did": UserDid,
       ...config.headers,
     };
 
