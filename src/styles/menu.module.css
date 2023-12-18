@@ -1,0 +1,16 @@
+.title {
+  justify-content: center;
+  font-family: SFProDisplay-Bold;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.btnBack {
+  margin-left: 10px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+}

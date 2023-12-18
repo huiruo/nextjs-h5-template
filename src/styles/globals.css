@@ -72,8 +72,8 @@
 html,
 body {
   max-width: 100vw;
-  color: #333231;
-  background: #FEF8EE;
+  color: #FFFFFF;
+  background: #063B1C;
 }
 
 a {
@@ -92,6 +92,13 @@ a {
   display: flex;
 }
 
+.flex1 {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .xy-center {
   display: flex;
   justify-content: center;
@@ -102,7 +109,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  ;
 }
 
 .p-xy-1 {

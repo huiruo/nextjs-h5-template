@@ -4,11 +4,11 @@ import { useRouter } from 'next/router'
 import i18nextConfig from '../../../next-i18next.config'
 import { getStaticPaths, makeStaticProps } from '@/lib/getStatic'
 import { LanguageSwitchDropdown } from '@/components/languageSwitchDropdown'
-import classnames from "classnames";
 import styles from '@/styles/Home.module.scss'
 import { MainContent } from '@/components/mainContent'
 import { useEffect } from 'react'
 import { getRoomInfo } from '@/services/api'
+import { Menu } from '@/components/menu'
 
 export default function Home() {
   const router = useRouter()
@@ -33,6 +33,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.mainContainer}>
+        <Menu title={t('main-title')} />
         <div className={styles.menu}>
           <div />
           <LanguageSwitchDropdown locales={i18nextConfig.i18n.locales} />
