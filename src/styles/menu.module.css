@@ -1,16 +1,23 @@
 .title {
   justify-content: center;
   font-family: SFProDisplay-Bold;
-  font-size: 20px;
+  /* font-size: 20px; */
+  font-size: 1.25rem;
   font-weight: 700;
 }
 
 .btnBack {
-  margin-left: 10px;
+  margin: 0 10px;
+}
+
+.arBtn {
+  transform: rotate(180deg);
 }
 
 .container {
   display: flex;
   align-items: center;
-  margin-top: 40px;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  background: #063B1C;
 }

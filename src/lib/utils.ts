@@ -8,6 +8,7 @@ export async function setConsole() {
       maxLogNumber: 5000,
       onReady() {
         vConsole.setSwitchPosition(50, 100);
+        // vConsole.show(); // Set vConsole to open by default
       },
     });
   }

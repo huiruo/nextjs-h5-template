@@ -80,3 +80,11 @@ export function openRoom(rid: string) {
 export function onReturnToWeb(callback: any) {
   return listenAppMethod("onReturnToWeb", callback);
 }
+
+export function navigateBack() {
+  return callAppFunc('navigateBack')
+}
+
+export function showProfilePage(uid: number | string) {
+  return callAppFunc('showProfilePage', { uid: Number(uid) })
+}

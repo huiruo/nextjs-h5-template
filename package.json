@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "cp .env.uat .env.local && next dev -p 8000",
+    "build:uat": "cp .env.uat .env.local && next build",
+    "build:prod": "cp .env.prod .env.local && next build",
     "server": "next start",
     "server2": "npx serve@latest out",
     "lint": "next lint"

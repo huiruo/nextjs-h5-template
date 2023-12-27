@@ -73,7 +73,9 @@ html,
 body {
   max-width: 100vw;
   color: #FFFFFF;
-  background: #063B1C;
+  /* background: #063B1C; */
+  background: #0F2E23;
+  font-size: 16px;
 }
 
 a {
@@ -99,10 +101,30 @@ a {
   align-items: center;
 }
 
+.flex2 {
+  display: flex;
+  flex: 2;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .xy-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.x-center {
+  display: flex;
+  justify-content: center;
+}
+
+.hp100 {
+  height: 100%;
+}
+
+.wp100 {
+  width: 100%;
 }
 
 .xy-start {
@@ -125,4 +147,25 @@ a {
 
 .font-color {
   color: #00D9B2;
+}
+
+.bg-100{
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.bg-fill{
+  background-size: 200px 240px;
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-position: center top; 
+}
+
+.ml-8{
+  margin-left: 10px;
+}
+
+.mr-8{
+  margin-right: 10px;
 }
