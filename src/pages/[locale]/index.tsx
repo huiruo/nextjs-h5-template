@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.mainContainer}>
-        <Menu title={t('main-title')} />
+        <Menu title={t('main-title') as string} currentLocale={currentLocale as string} />
         <div className={styles.menu}>
           <div />
           <LanguageSwitchDropdown locales={i18nextConfig.i18n.locales} />
