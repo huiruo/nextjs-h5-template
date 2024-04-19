@@ -1,4 +1,4 @@
-import btnBack from '@/assets/btn_back.svg'
+import btnBack from '@/assets/backbtn.webp'
 import classNames from 'classnames'
 import styles from '@/styles/menu.module.css'
 import Image from 'next/image'
