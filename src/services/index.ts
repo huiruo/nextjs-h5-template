@@ -1,23 +1,6 @@
 import axios, { AxiosRequestConfig, AxiosRequestHeaders } from "axios";
 
-type BaseURL = {
-  development: string;
-  uat: string;
-  production: string;
-};
-
-const baseURL: BaseURL = {
-  development: "https://test.xx.vip",
-  uat: "https://test.xx.vip",
-  production: "https://api.test.vip",
-};
-
-// const UserDid = isInApp()
-//   ? JSON.parse(localStorage.getItem("commonHeader")!)["User-Did"]
-//   : "DuRlx9yTJKsXs0QvZ4UUY1c2wOjEr9dkE07a7dvVqiY1EzONMGU4KIbaqyFJNjINDjRVx2eU31O5AJ1NoowFjWTA";
-
 export const instance = axios.create({
-  // baseURL: baseURL[process.env.NODE_ENV as keyof BaseURL],
   baseURL: process.env.NEXT_PUBLIC_API_URL,
   headers: {
     post: {
@@ -26,6 +9,8 @@ export const instance = axios.create({
   },
   // transformRequest: [qs.stringify],
 });
+
+export const devTestToken = "test token";
 
 instance.interceptors.request.use(
   (config) => {
@@ -37,7 +22,8 @@ instance.interceptors.request.use(
     const headers: unknown = {
       Accept: "application/json",
       "Content-Type": "application/json",
-      "user-token": userInfo?.token,
+      "user-token":
+        process.env.NODE_ENV !== "development" ? userInfo?.token : devTestToken,
       "User-Did": commonHeader && commonHeader["User-Did"],
     };
 
@@ -59,7 +45,11 @@ instance.interceptors.response.use(
   }
 );
 
-export type Result<D> = D & { success: boolean; msg: string; data: D };
+export interface Result<T = any> {
+  data: T;
+  success: boolean;
+  msg: string;
+}
 
 export async function request<D>(config: AxiosRequestConfig) {
   try {
