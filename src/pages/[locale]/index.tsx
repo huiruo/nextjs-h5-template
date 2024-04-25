@@ -1,7 +1,10 @@
 import { useEffect } from 'react'
 import { getStaticPaths, makeStaticProps } from '@/lib/getStatic'
-import { getRoomInfo } from '@/services/api'
-import { navigateBack } from '@/lib/native'
+import { appSlice } from '@/store/appSlice'
+import { useDispatch } from 'react-redux'
+import { AppDispatch } from '@/store'
+
+import { getUserInfo, navigateBack } from '@/lib/native'
 import Image from 'next/image'
 import classNames from 'classnames'
 import { Box } from '@mui/system'
@@ -14,27 +17,31 @@ import backBtn from '@/assets/backbtn.webp'
 
 export default function Home() {
   const router = useRouter()
-  const { rid } = router.query;
-  const { t } = useTranslation('common')
   const currentLocale =
     router.query.locale || i18nextConfig.i18n.defaultLocale
 
   // TODO: test
-  // const { isShowNav } = router.query;
-  const isShowNav = '1'
+  // const isShowNav = '1'
+  const { isShowNav } = router.query;
 
-  const getRoomInfoUtil = async () => {
-    const res = await getRoomInfo({ rid: rid as any })
-    if (res?.success === true) {
-      console.log('RoomInfo==>:', res.data)
-    } else {
-      console.error('getUser-error:', res)
+  const dispatch: AppDispatch = useDispatch();
+
+  const getUserInfoUtil = async () => {
+    try {
+      const appData = await getUserInfo()
+      if (appData.token) {
+        sessionStorage.setItem("UserInfo", JSON.stringify(appData));
+        dispatch(appSlice.actions.addToken(appData.token))
+      } else {
+        alert('token null')
+      }
+    } catch (error) {
+      console.log('%c=getUserInfoUtil', 'color:red', error)
+      if (process.env.NODE_ENV === "development") {
+        dispatch(appSlice.actions.addToken('test token'))
+      }
     }
   }
-
-  useEffect(() => {
-    getRoomInfoUtil()
-  }, [])
 
   const onBack = () => {
     try {
@@ -44,6 +51,10 @@ export default function Home() {
       console.log('router error', error)
     }
   }
+
+  useEffect(() => {
+    getUserInfoUtil()
+  }, [])
 
   return (
     <main className={styles.mainContainer}>
@@ -55,7 +66,10 @@ export default function Home() {
 
       <Box sx={{ position: 'absolute', display: 'flex', justifyContent: 'space-between', top: '30px', width: '100%' }}>
         <div />
-        {isShowNav === '1' && <Image onClick={onBack} className={classNames(styles.btnBack)} src={backBtn} alt='btnBack' />}
+        {!isShowNav && <Box onClick={() => onBack()}>
+          <Image className={classNames(styles.btnBack)} src={backBtn} alt='btnBack' />
+        </Box>
+        }
       </Box>
 
       <MainContent currentLocale={currentLocale as string} />

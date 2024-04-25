@@ -27,3 +27,13 @@ export function getRoomInfo(params: { rid: number }) {
     data: params,
   });
 }
+
+export function getWeekStar(params: { type: number }) {
+  return request<{
+    data: Result<RoomInfoData>;
+  }>({
+    method: "get",
+    url: `/bravo/api/weekstar/shiningStars?format=json&type=${params.type}`,
+    params: { ...withUrl },
+  });
+}

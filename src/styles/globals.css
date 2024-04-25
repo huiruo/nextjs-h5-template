@@ -79,6 +79,11 @@ body {
   height: 100%;
 }
 
+img {
+  user-select: none;
+  pointer-events: none;
+}
+
 #__next {
   height: 100%;
 }
@@ -167,10 +172,6 @@ a {
   background-position: center top; 
 }
 
-.ml-8{
-  margin-left: 10px;
-}
-
-.mr-8{
-  margin-right: 10px;
+.ReactModal__Body--open {
+  overflow: hidden;
 }
