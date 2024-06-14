@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cp .env.uat .env.local && next dev -p 8000",
+    "dev": "cp .env.uat .env.local && next dev -p 8005",
     "build:uat": "cp .env.uat .env.local && next build",
     "build:prod": "cp .env.prod .env.local && next build",
     "server": "next start",
@@ -13,7 +13,6 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
-    "@mui/base": "^5.0.0-beta.40",
     "@mui/system": "^5.15.15",
     "@reduxjs/toolkit": "^2.2.3",
     "axios": "^1.6.2",
